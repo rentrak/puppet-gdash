@@ -1,9 +1,9 @@
 # Class: gdash::params
 #
 class gdash::params {
+  $documentroot      = '/usr/local/gdash'
   $graphitehost      = '127.0.0.1'
-  $gdashroot         = '/usr/local/gdash'
-  $vhost_config_file = "${gdashroot}/gdash.conf"
+  $vhost_config_file = "${documentroot}/gdash.conf"
 
   case $::osfamily {
     'Debian': {

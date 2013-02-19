@@ -1,7 +1,7 @@
 # Class: gdash
 #
 class gdash (
-  $gdashroot         = $::gdash::params::gdashroot,
+  $documentroot      = $::gdash::params::documentroot,
   $graphitehost      = $::gdash::params::graphitehost,
   $package_deps      = $::gdash::params::package_deps,
   $package_ensure    = $::gdash::params::package_ensure,
