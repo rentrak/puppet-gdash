@@ -7,11 +7,18 @@ class gdash::params {
 
   case $::osfamily {
     'Debian': {
-      $service_name = 'apache2'
+      $package_deps   = undef
+      $package_ensure = true
+      $package_name   = undef
+      $service_name   = 'apache2'
     }
 
+
     'RedHat': {
-      $service_name = 'httpd'
+      $package_deps   = [ 'rubygem-bundler', 'gdash-bundled-deps' ]
+      $package_ensure = true
+      $package_name   = [ 'gdash' ]
+      $service_name   = 'httpd'
     }
 
     default: {
