@@ -1,6 +1,7 @@
 # Class: gdash::config
 #
 class gdash::config {
+  $package_name      = $::gdash::package_name
   $service_name      = $::gdash::service_name
   $vhost_config_file = $::gdash::vhost_config_file
   $vhost_dir         = $::gdash::vhost_dir
@@ -13,7 +14,7 @@ class gdash::config {
     content => template('gdash/gdash.yaml.erb'),
     group   => '0',
     owner   => '0',
-    require => Package['gdash'],
+    require => Package[$package_name],
   }
 
   file { $vhost_config_file:
