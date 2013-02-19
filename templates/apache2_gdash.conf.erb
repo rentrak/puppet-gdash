@@ -2,11 +2,12 @@ Listen 8140
 <VirtualHost *:8140>
 
     RackAutoDetect On
-    DocumentRoot /usr/local/gdash/public/
-    ErrorLog  /var/log/httpd/errorlog-gdash
-    CustomLog /var/log/httpd/accesslog-gdash combined
+    DocumentRoot <%= vhost_dir %>/public
 
-    <Directory /usr/local/gdash/>
+    ErrorLog  <%= log_dir %>/errorlog-gdash
+    CustomLog <%= log_dir %>/accesslog-gdash combined
+
+    <Directory <%= vhost_dir %>>
         Options None
         AllowOverride None
         Order allow,deny

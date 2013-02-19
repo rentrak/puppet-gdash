@@ -1,15 +1,15 @@
 # Class: gdash::config
 #
 class gdash::config {
-  $documentroot      = $::gdash::documentroot
   $service_name      = $::gdash::service_name
   $vhost_config_file = $::gdash::vhost_config_file
+  $vhost_dir         = $::gdash::vhost_dir
 
-  file { $documentroot:
+  file { $vhost_dir:
     ensure => directory,
   }
 
-  file { "${documentroot}/config/gdash.yaml":
+  file { "${vhost_dir}/config/gdash.yaml":
     content => template('gdash/gdash.yaml.erb'),
     group   => '0',
     owner   => '0',
