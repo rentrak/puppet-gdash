@@ -21,7 +21,7 @@ class gdash::config {
     mode   => '0644',
     group  => '0',
     owner  => '0',
-    source => 'puppet:///modules/gdash/gdash.conf',
+    content => template('gdash/apache2_gdash.conf.erb'),
     notify => Service[$service_name];
   }
 }
