@@ -10,11 +10,16 @@ class gdash::config {
     ensure => directory,
   }
 
+  file { "${vhost_dir}/config":
+    ensure => directory,
+  }
+
   file { "${vhost_dir}/config/gdash.yaml":
     content => template('gdash/gdash.yaml.erb'),
     group   => '0',
     owner   => '0',
     require => Package[$package_name],
+    notify  => Service[$service_name],
   }
 
   file { $vhost_config_file:
