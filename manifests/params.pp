@@ -15,6 +15,7 @@ class gdash::params {
       $package_ensure    = true
       $package_name      = 'graphite-gdash'
       $service_name      = 'apache2'
+      $template_dir      = "${config_dir}/templates"
       $vhost_config_file = "${config_dir}/apache2_gdash.conf"
       $vhost_dir         = '/usr/share/gdash'
       $vhost_group       = 'www-data'
@@ -29,6 +30,7 @@ class gdash::params {
       $package_ensure    = true
       $package_name      = [ 'gdash' ]
       $service_name      = 'httpd'
+      $template_dir      = "${config_dir}/templates"
       $vhost_config_file = "${config_dir}/apache2_gdash.conf"
       $vhost_dir         = '/usr/local/gdash'
       $vhost_group       = 'apache'
