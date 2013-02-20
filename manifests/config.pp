@@ -18,11 +18,11 @@ class gdash::config {
   }
 
   file { $vhost_config_file:
-    ensure => 'file',
-    mode   => '0644',
-    group  => '0',
-    owner  => '0',
+    ensure  => 'file',
+    mode    => '0644',
+    group   => '0',
+    owner   => '0',
     content => template('gdash/apache2_gdash.conf.erb'),
-    notify => Service[$service_name];
+    notify  => Service[$service_name];
   }
 }
