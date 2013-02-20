@@ -1,9 +1,11 @@
 # Class: gdash::params
 #
 class gdash::params {
+  $config_group      = 'root'
+  $config_user       = 'root'
   $graphite_host     = '127.0.0.1'
-  $vhost_servername  = "gdash.${domain}"
   $vhost_serveralias = undef
+  $vhost_servername  = "gdash.${domain}"
 
   case $::osfamily {
     'Debian': {
@@ -15,6 +17,8 @@ class gdash::params {
       $service_name      = 'apache2'
       $vhost_config_file = "${config_dir}/apache2_gdash.conf"
       $vhost_dir         = '/usr/share/gdash'
+      $vhost_group       = 'www-data'
+      $vhost_user        = 'www-data'
       $whisper_dir       = '/opt/graphite/storage/whisper'
     }
 
@@ -27,6 +31,8 @@ class gdash::params {
       $service_name      = 'httpd'
       $vhost_config_file = "${config_dir}/apache2_gdash.conf"
       $vhost_dir         = '/usr/local/gdash'
+      $vhost_group       = 'apache'
+      $vhost_user        = 'apache'
       $whisper_dir       = '/var/lib/carbon/whisper'
     }
 

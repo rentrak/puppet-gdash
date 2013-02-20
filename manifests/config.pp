@@ -1,13 +1,31 @@
 # Class: gdash::config
 #
 class gdash::config {
+  $config_group      = $::gdash::config_group
+  $config_user       = $::gdash::config_user
   $package_name      = $::gdash::package_name
   $service_name      = $::gdash::service_name
   $vhost_config_file = $::gdash::vhost_config_file
   $vhost_dir         = $::gdash::vhost_dir
+  $vhost_group       = $::gdash::vhost_group
+  $vhost_user        = $::gdash::vhost_user
 
-  file { $vhost_dir:
+  file { $config_dir:
     ensure => directory,
+    owner  => $config_user,
+    group  => $config_group,
+  }
+
+  file { "${vhost_dir}/public":
+    ensure => directory,
+    owner  => $vhost_user,
+    group  => $vhost_group,
+  }
+
+  file { $template_dir:
+    ensure => directory,
+    owner  => $vhost_user,
+    group  => $vhost_group,
   }
 
   file { "${vhost_dir}/config":
