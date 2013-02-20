@@ -1,10 +1,12 @@
 # Class: gdash::config
 #
 class gdash::config {
+  $config_dir        = $::gdash::config_dir
   $config_group      = $::gdash::config_group
   $config_user       = $::gdash::config_user
   $package_name      = $::gdash::package_name
   $service_name      = $::gdash::service_name
+  $template_dir      = $::gdash::template_dir
   $vhost_config_file = $::gdash::vhost_config_file
   $vhost_dir         = $::gdash::vhost_dir
   $vhost_group       = $::gdash::vhost_group

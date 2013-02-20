@@ -5,7 +5,7 @@ class gdash::params {
   $config_user       = 'root'
   $graphite_host     = '127.0.0.1'
   $vhost_serveralias = undef
-  $vhost_servername  = "gdash.${domain}"
+  $vhost_servername  = "gdash.${::domain}"
 
   case $::osfamily {
     'Debian': {
