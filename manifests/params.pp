@@ -3,7 +3,7 @@
 class gdash::params {
   $config_group      = 'root'
   $config_user       = 'root'
-  $graphite_host     = '127.0.0.1'
+  $graphite_host     = "http://graphite.${::domain}"
   $vhost_serveralias = undef
   $vhost_servername  = "gdash.${::domain}"
 
