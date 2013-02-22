@@ -8,10 +8,13 @@
   :prefix: ""
   :refresh_rate: 60
   :graph_columns: 2
-  :graph_width: 500
+  :graph_width: 550
   :graph_height: 250
   :whisper_dir: "<%= whisper_dir %>"
   :interval_filters:
+    - :label: Last 5 Minutes
+      :from: -5minute
+      :to: now
     - :label: Last Hour
       :from: -1hour
       :to: now
@@ -24,8 +27,10 @@
     - :label: Last Year
       :from: -1year
   :intervals:
+    - [ "-5minute", "5 minutes" ]
     - [ "-1hour", "1 hour" ]
     - [ "-2hour", "2 hour" ]
     - [ "-1day", "1 day" ]
     - [ "-1month", "1 month" ]
     - [ "-1year", "1 year" ]
+
