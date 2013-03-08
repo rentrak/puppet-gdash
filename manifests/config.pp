@@ -11,6 +11,8 @@ class gdash::config {
   $vhost_config_file = $::gdash::vhost_config_file
   $vhost_dir         = $::gdash::vhost_dir
   $vhost_group       = $::gdash::vhost_group
+  $vhost_serveralias = $::gdash::vhost_serveralias
+  $vhost_servername  = $::gdash::vhost_servername
   $vhost_user        = $::gdash::vhost_user
 
   file { $config_dir:
