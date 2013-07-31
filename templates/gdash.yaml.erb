@@ -1,5 +1,5 @@
-:graphite: <%= graphite_host %>
-:templatedir: <%= template_dir %>
+:graphite: <%= @graphite_host %>
+:templatedir: <%= @template_dir %>
 
 #:username: admin
 #:password: secret
@@ -10,7 +10,7 @@
   :graph_columns: 2
   :graph_width: 550
   :graph_height: 250
-  :whisper_dir: "<%= whisper_dir %>"
+  :whisper_dir: "<%= @whisper_dir %>"
   :interval_filters:
     - :label: Last 5 Minutes
       :from: -5minute
