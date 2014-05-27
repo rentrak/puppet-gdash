@@ -14,6 +14,7 @@ class gdash::config {
   $vhost_serveralias = $::gdash::vhost_serveralias
   $vhost_servername  = $::gdash::vhost_servername
   $vhost_user        = $::gdash::vhost_user
+  $log_dir           = $::gdash::log_dir
 
   file { $config_dir:
     ensure => directory,
