@@ -1,13 +1,13 @@
 <VirtualHost *:80>
     RackAutoDetect On
-    DocumentRoot <%= vhost_dir %>/public
-    ServerName   <%= vhost_servername %>
-    ServerAlias  <%= vhost_serveralias %>
+    DocumentRoot <%= @vhost_dir %>/public
+    ServerName   <%= @vhost_servername %>
+    ServerAlias  <%= @vhost_serveralias %>
 
-    ErrorLog  <%= log_dir %>/gdash_error.log
-    CustomLog <%= log_dir %>/gdash_access.log combined
+    ErrorLog  <%= @log_dir %>/gdash_error.log
+    CustomLog <%= @log_dir %>/gdash_access.log combined
 
-    <Directory <%= vhost_dir %>>
+    <Directory <%= @vhost_dir %>>
         Options None
         AllowOverride None
         Order allow,deny
