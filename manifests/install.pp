@@ -7,12 +7,14 @@ class gdash::install {
 
   if $package_deps {
     package { $package_deps:
-      ensure => $package_ensure,
+      ensure   => $package_ensure,
+      provider => 'gem'
     }
   }
 
   package { $package_name:
     ensure => present,
+    provider => 'gem'
   }
 }
 
